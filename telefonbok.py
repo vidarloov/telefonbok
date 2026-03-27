@@ -19,12 +19,15 @@ def läggtill():
     nummer = input("Skriv telefonnummer:")
     if not nummer.isdigit():
         print("Telefonnummeret får bara innehålla siffror")
+        print("-------------------------------")
         meny()
         return
     
     telefonbok[namn] = nummer
     spara()
     print("tillagd")
+    print("-------------------------------")
+
     meny()
 
 def sök():
@@ -45,6 +48,7 @@ def uppdatera():
         telefonbok[namn] = nyttnummer
         spara()
         print("Uppdaterat")
+    print("-------------------------------")
     meny()
 
 def tabort():
@@ -53,16 +57,19 @@ def tabort():
         telefonbok.pop(namn)
         spara()
         print("borttagen")
+    print("-------------------------------")
     meny()
 
 def visa():
     print("Alla kontakter:")
     for namn, nummer in telefonbok.items():
         print(namn, nummer)
+    
+    print("-------------------------------")
     meny()
 
 def meny():
-    print("Välj en")
+    print("Välj en av alternativen:")
     print("1. Lägg till kontakt")
     print("2. Sök kontakt")
     print("3. Uppdatera kontakt")
@@ -95,4 +102,5 @@ def meny():
         print("Finns inte, försök igen.")
         meny()
 
+rensa()
 meny()
